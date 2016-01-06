@@ -26,3 +26,13 @@ class Post:
         self.create_date = dictionary["create_date"]
         self.edit_date = dictionary["edit_date"]
         return self
+
+    def to_dict(self):
+        result = {
+            "post_id": self.post_id,
+            "title": self.title,
+            "content": self.content,
+            "create_date": self.create_date.__str__(),
+            "edit_data": self.edit_date.__str__()
+        }
+        return result
